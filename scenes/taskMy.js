@@ -1,7 +1,6 @@
 const { Telegraf, Markup, Scenes, session, Composer} = require('telegraf');
 
 const taskList = require("./taskAdd.js")
-const {WizardScene} = require("telegraf/scenes");
 
 const startStep = new Composer()
 startStep.on("text", async (ctx) => {

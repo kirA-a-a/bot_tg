@@ -2,8 +2,6 @@ const { Telegraf, Markup, Scenes, session, Composer} = require('telegraf');
 const axios = require('axios');
 require('dotenv').config()
 
-const apiKey = process.env.API_KEY
-
 const startStep = new Composer()
 startStep.on("text", async (ctx) => {
     try {
@@ -20,8 +18,7 @@ geoStep.on("message", async (ctx) => {
     try {
         ctx.wizard.state.data.title = ctx.message.location
         if (ctx.message.location) {
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${ctx.message.location.latitude}
-            &lon=${ctx.message.location.longitude}&appid=2c1205cd50fb011f6d2812eaa07ee820=metric`
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${ctx.message.location.latitude}&lon=${ctx.message.location.longitude}&appid=___&units=metric`
             const response = await axios.get(url);
             ctx.reply(`${response.data.name}: ${response.data.main.temp} °C`);
         } else {
