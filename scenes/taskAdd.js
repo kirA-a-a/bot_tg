@@ -36,6 +36,7 @@ answerStep.on("text", async (ctx) => {
             taskList.splice(0,1)
             ctx.replyWithHTML(`<b>Хорошо, я не стал это запонимать</b>`)
         }
+        console.log(taskList)
         return ctx.scene.leave()
     } catch (e) {
         console.error(e)
