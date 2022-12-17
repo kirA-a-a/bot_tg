@@ -44,3 +44,4 @@ answerStep.on("text", async (ctx) => {
 
 const addTasksScene = new Scenes.WizardScene("addTasksWizard", startStep, titleStep, answerStep)
 module.exports = addTasksScene
+module.exports.taskList = taskList
