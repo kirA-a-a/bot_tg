@@ -7,7 +7,7 @@ const myTasksScene = require('./scenes/taskMy.js');
 const addTasksScene = require('./scenes/taskAdd.js');
 const weatherScene = require('./scenes/wheatherInfo.js');
 
-const bot = new Telegraf('5807669918:AAHsVaJlpxasAMciEAhpBA8DkEF22ZLfnqA');
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const stage = new Scenes.Stage([myTasksScene, addTasksScene, weatherScene]);
 bot.use(session());
