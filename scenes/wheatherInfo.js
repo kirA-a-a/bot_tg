@@ -20,7 +20,11 @@ geoStep.on('message', async (ctx) => {
   try {
     ctx.wizard.state.data.title = ctx.message.location;
     if (ctx.message.location) {
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${ctx.message.location.latitude}&lon=${ctx.message.location.longitude}&appid=${process.env.API_KEY}&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/weather
+      ?lat=${ctx.message.location.latitude}
+      &lon=${ctx.message.location.longitude}
+      &appid=${process.env.API_KEY}
+      &units=metric`;
       const response = await axios.get(url);
       ctx.reply(`${response.data.name}: ${response.data.main.temp} °C`);
     } else {
